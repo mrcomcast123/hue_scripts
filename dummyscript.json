@@ -1,0 +1,353 @@
+{
+	"type" : "huestream.LightScript",
+	"VerionMajor" : 0,
+	"VersionMinor" : 0,
+	"Name" : "testscript",
+	"IdealSetup" : [
+		{
+			"type" : "huestream.Location",
+			"X" : -1,
+			"Y" : 0
+		},
+		{
+			"type" : "huestream.Location",
+			"X" : 0,
+			"Y" : 0
+		},
+		{
+			"type" : "huestream.Location",
+			"X" : 1,
+			"Y" : 0
+		}
+	],
+	"Length" : 20000,
+	"layers" : [
+		{
+			"layer" : 0,
+			"timeline" : [
+				{
+					"type" : "huestream.Action",
+					"Name" : "redat0",
+					"StartPosition" : 0,
+					"Effect" : {
+						"type" : "huestream.AreaEffect",
+						"Name" : "redLeft",
+						"Speed" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"R" : {
+							"type" : "huestream.CurveAnimation",
+							"RepeatTimes" : 2,
+							"CurveData" : {
+								"type" : "huestream.CurveData",
+								"Points" : [
+									{
+										"type" : "huestream.Point",
+										"X" : 0,
+										"Y" : 0
+									},
+									{
+										"type" : "huestream.Point",
+										"X" : 1000,
+										"Y" : 1
+									},
+									{
+										"type" : "huestream.Point",
+										"X" : 2000,
+										"Y" : 0
+									}
+								]
+							}
+						},
+						"G" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0
+						},
+						"B" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0
+						},
+						"A" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"OpacityBoundToIntensity" : false,
+						"Areas" : [
+							{
+								"type" : "huestream.Area",
+								"Name" : "Left",
+								"TopLeft" : {
+									"type" : "huestream.Location",
+									"X" : -1,
+									"Y" : 1
+								},
+								"BottomRight" : {
+									"type" : "huestream.Location",
+									"X" : -0.333333,
+									"Y" : -1
+								},
+								"Inverted" : false
+							}
+						]
+					}
+				},
+				{
+					"type" : "huestream.Action",
+					"Name" : "blue3to12",
+					"StartPosition" : 3000,
+					"EndPosition" : 16000,
+					"Effect" : {
+						"type" : "huestream.AreaEffect",
+						"Name" : "blueRight",
+						"Speed" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"R" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0
+						},
+						"G" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0
+						},
+						"B" : {
+							"type" : "huestream.CurveAnimation",
+							"CurveData" : {
+								"type" : "huestream.CurveData",
+								"Points" : [
+									{
+										"type" : "huestream.Point",
+										"X" : 0,
+										"Y" : 0
+									},
+									{
+										"type" : "huestream.Point",
+										"X" : 1000,
+										"Y" : 1
+									},
+									{
+										"type" : "huestream.Point",
+										"X" : 2000,
+										"Y" : 0
+									}
+								]
+							}
+						},
+						"A" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"OpacityBoundToIntensity" : false,
+						"Areas" : [
+							{
+								"type" : "huestream.Area",
+								"Name" : "RightHalf",
+								"TopLeft" : {
+									"type" : "huestream.Location",
+									"X" : 0,
+									"Y" : 1
+								},
+								"BottomRight" : {
+									"type" : "huestream.Location",
+									"X" : 1,
+									"Y" : -1
+								},
+								"Inverted" : false
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"layer" : 1,
+			"timeline" : [
+				{
+					"type" : "huestream.Action",
+					"Name" : "explosionAt5",
+					"StartPosition" : 5000,
+					"Effect" : {
+						"type" : "huestream.LightSourceEffect",
+						"Name" : "explosion",
+						"Speed" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"R" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"G" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0.7
+						},
+						"B" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0.3
+						},
+						"A" : {
+							"type" : "huestream.SequenceAnimation",
+							"RepeatTimes" : 0,
+							"Sequences" : [
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0.5,
+									"End" : 1,
+									"Time" : 200
+								},
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 1,
+									"End" : 1,
+									"Time" : 1500
+								},
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "EaseInOutQuad",
+									"Begin" : 1,
+									"End" : 0,
+									"Time" : 800
+								}
+							],
+							"bookmarks" : {}
+						},
+						"OpacityBoundToIntensity" : false,
+						"X" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0
+						},
+						"Y" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 0
+						},
+						"Radius" : {
+							"type" : "huestream.SequenceAnimation",
+							"RepeatTimes" : 0,
+							"Sequences" : [
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0,
+									"End" : 2.2,
+									"Time" : 500
+								},
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "EaseInOutQuad",
+									"Begin" : 2.2,
+									"End" : 0,
+									"Time" : 2000
+								}
+							],
+							"bookmarks" : {
+								"FastUp" : 0,
+								"SlowDown" : 1
+							}
+						}
+					}
+				},
+				{
+					"type" : "huestream.Action",
+					"Name" : "marqueeAt10",
+					"StartPosition" : 10000,
+					"EndPosition" : 19000,
+					"Effect" : {
+						"type" : "huestream.LightIteratorEffect",
+						"Name" : "marquee",
+						"Speed" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1
+						},
+						"R" : {
+							"type" : "huestream.SequenceAnimation",
+							"RepeatTimes" : 2,
+							"Sequences" : [
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0,
+									"End" : 0.5,
+									"Time" : 250
+								},
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0.5,
+									"End" : 0,
+									"Time" : 250
+								}
+							],
+							"bookmarks" : {
+								"DownRed" : 1,
+								"UpRed" : 0
+							}
+						},
+						"G" : {
+							"type" : "huestream.SequenceAnimation",
+							"RepeatTimes" : 2,
+							"Sequences" : [
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0,
+									"End" : 0.5,
+									"Time" : 250
+								},
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0.5,
+									"End" : 0,
+									"Time" : 250
+								}
+							],
+							"bookmarks" : {
+								"DownGreen" : 1,
+								"UpGreen" : 0
+							}
+						},
+						"B" : {
+							"type" : "huestream.SequenceAnimation",
+							"RepeatTimes" : 2,
+							"Sequences" : [
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0,
+									"End" : 0.5,
+									"Time" : 250
+								},
+								{
+									"type" : "huestream.TweenAnimation",
+									"TweenType" : "Linear",
+									"Begin" : 0.5,
+									"End" : 0,
+									"Time" : 250
+								}
+							],
+							"bookmarks" : {
+								"DownBlue" : 1,
+								"UpBlue" : 0
+							}
+						},
+						"A" : {
+							"type" : "huestream.ConstantAnimation",
+							"Value" : 1,
+							"Length" : 1500
+						},
+						"OpacityBoundToIntensity" : true,
+						"Order" : "clockwise",
+						"Mode" : "cycle",
+						"Offset" : 1500,
+						"Preamble" : true,
+						"InvertOrder" : false
+					}
+				}
+			]
+		}
+	]
+}
